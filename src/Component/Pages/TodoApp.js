@@ -11,7 +11,7 @@ const TodoApp = () => {
   
     const handleDelete =  (id) => {
         console.log(id);
-        const url =  `http://localhost:5000/collection/${id}`;
+        const url =  `https://mighty-sands-81902.herokuapp.com/collection/${id}`;
         fetch(url,{
             method: 'DELETE',
         })
@@ -25,7 +25,7 @@ const TodoApp = () => {
    
     // receive all data
     useEffect(()=>{
-        const url = `http://localhost:5000/collection`;
+        const url = `https://mighty-sands-81902.herokuapp.com/collection`;
         fetch(url)
         .then(res=> res.json())
         .then(data=> setTask(data))
@@ -41,7 +41,7 @@ const TodoApp = () => {
             task: task,
             description: description
         }
-        const url = `http://localhost:5000/collection`;
+        const url = `https://mighty-sands-81902.herokuapp.com/collection`;
         fetch(url,{
             method: "POST",
             headers: {
@@ -54,6 +54,7 @@ const TodoApp = () => {
     }
     const handleComplete = ()=>{
         toast("complete")
+
     }
     return (
         <div>
